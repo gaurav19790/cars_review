@@ -10,7 +10,7 @@ const Card = ({photo,title},index)=>{
 }
 const Cards = ({data}) => {
   return (
-    <div className=' p-3 pt-0'>
+    <div className=' p-3 pt-0  m-auto '>
       <div>
         <h2 className='pb-2 font-bold'>Trending</h2>
       </div>

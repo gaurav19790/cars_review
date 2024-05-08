@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Banner, Footer, Header, List,Cards, FindCars } from './components';
+import { Banner, Footer, Header, Brands,Cards, FindCars } from './components';
 
 
 function App() {
@@ -57,13 +57,13 @@ function App() {
   },
   ]
   return (
-    <div className="App">
+    <div className="App text-sm md:text-base">
     <Header/>
      {/* banner */}
       <Banner data={data}/>
 <div className=' ml-3'>
  
-        <List/>
+        <Brands/>
         <FindCars/>
      <Cards data={data}/>
      <Cards data={data}/>
