@@ -4,5 +4,6 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Brands from "./Brands";
 import FindCars from "./FindCars";
-
-export {Banner,Cards,Footer,Header,Brands,FindCars};
+import Search from "./SearchBar";
+import CarDetail from "./CarDetail";
+export {Banner,Cards,Footer,Header,Brands,FindCars,Search,CarDetail};
