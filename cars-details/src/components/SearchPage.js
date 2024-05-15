@@ -31,7 +31,11 @@ console.log(budgets)
   return (
     <div className="h-full w-full relative">
       <div className=" gap-2 w-full h-96">
+<<<<<<< HEAD
         {search.length? search?.filter(({name,brand})=>((name?.includes(names))||(brand?.includes(brands))||((names==null)&&(brands==null)))).map(
+=======
+        {search?.filter(({name,brand})=>((name?.includes(names))||(brand?.includes(brands))||((names==null)&&(brands==null)))).map(
+>>>>>>> 6947db36ea80d38ca976c8f6e230937f5ace8e64
           (
             { name, price, model, mileage, engine, fuel, seatingCapacity },
             index
@@ -42,7 +46,11 @@ console.log(budgets)
                 <h1>{name} , </h1>{model} , {price} ,<p>{mileage}  ,{engine}  ,{fuel}  ,{seatingCapacity}  ,</p> </div>
             </Link>
           )
+<<<<<<< HEAD
         ):<div>Error backend broke</div>}
+=======
+        )}
+>>>>>>> 6947db36ea80d38ca976c8f6e230937f5ace8e64
       </div>
       <div>
         {/* {search.filter(names).} */}

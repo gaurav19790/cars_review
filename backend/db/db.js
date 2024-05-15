@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const url =
-  "mongodb+srv://gaurav19790:gaurav12@carproject.g1nnem3.mongodb.net/cardetail";
+  "mongodb+srv://gaurav19790:<>@carproject.g1nnem3.mongodb.net/cardetail";
 const db = async () => {
   try {
     await mongoose.connect(url);
