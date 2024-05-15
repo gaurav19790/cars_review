@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Brands = () => {
     const brands=[ 
@@ -157,11 +158,11 @@ image:"https://imgd.aeplcdn.com/0X0/n/cw/ec/123/brands/logos/lotus1700211136329.
                   <ul className=" flex  flex-wrap   justify-center overflow-hidden text-center">
               {brands.map(({title,image},index)=>(
                                    <li key={index} className="h-24 w-28 px-1 py-4 md:w-40 md:h-32 max-w-full border-2 rounded-xl border-black text-[#6f6f6f] bg-white">
-                        <a href="#" > 
+                   <Link  to={`/search?brand=${title.toLowerCase()}`}>
                               <img src={image}
                               className=" w-full px-6 py-2" alt="no"/>
                     <h2 className="text-sm" >{title}</h2>
-                        </a>
+                    </Link>
                   
                 </li>
               
