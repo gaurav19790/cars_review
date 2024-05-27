@@ -1,17 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
-    const [search, setSearch] = useState("");
+    // const [search, setSearch] = useState("");
+    const inputRef=React.useRef();
+    const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(`The name you entered was: ${search}`);
+        console.log(inputRef.current.value);
+        navigate("/search?query="+inputRef.current.value)
       }
   return (
-    <form onSubmit={handleSubmit}  className=" items-center relative rounded-lg flex bg-white p-1 w-3/4 m-auto  ">
+    <form onSubmit={handleSubmit}  className="z-20 items-center relative rounded-lg flex bg-white p-1 w-auto m-auto border-2 ">
             <input
               type="text"
-              onChange={(e)=>setSearch(e.target.value)}
-              placeholder="cars" value={search} 
+              placeholder="cars" 
+              ref={inputRef}
               className=" block w-full rounded-md border-0  pl-2  focus:outline-white sm:text-sm sm:leading-6 text-black"
             />
             {/* <input type="text" name="price" id="price" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="0.00"/> */}

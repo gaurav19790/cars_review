@@ -2,9 +2,9 @@
 import React from 'react'
 const Card = ({photo,title},index)=>{
   return(
-    < a href='#' className='flex h-full w-48'>
-    <img  aria-hidden={index!==0} src={photo} alt='dd' className='w-full h-full rounded-2xl hover:scale-[1.08] hover:transform-gpu '  />
-<p className='absolute bottom-7 p-2 px-3 bg-slate-400/[0.6] rounded-xl'>{title}</p>
+    < a href='#' className='flex h-full w-40'>
+    <img  aria-hidden={index!==0} src={photo} alt='dd' className='w-full h-full rounded-2xl hover:scale-[1] hover:transform-gpu object-cover '  />
+<p className='absolute bottom-6 p-2 px-3 bg-slate-400/[0.6] rounded-xl'>{title}</p>
 </a>
   )
 }
@@ -14,7 +14,7 @@ const Cards = ({data}) => {
       <div>
         <h2 className='pb-2 font-bold'>Trending</h2>
       </div>
-      <div className=' flex gap-3 h-56 p-5 relative rounded-2xl overflow-x-auto no-scrollbar'>
+      <div className=' flex gap-3 h-36 p-5 relative rounded-2xl overflow-x-auto no-scrollbar'>
          {data.map(({photo,title},index)=>(
           <div key={index} >
         <Card  photo={photo} title={title}/>

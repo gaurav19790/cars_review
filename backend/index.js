@@ -4,6 +4,8 @@ import cors from "cors";
 import { router } from "./routers/router.js";
 import { homeRouter } from "./routers/home.js";
 import { db } from "./db/db.js";
+import { configDotenv } from "dotenv";
+configDotenv();
 db();
 app.use(cors());
 app.use(express.json());

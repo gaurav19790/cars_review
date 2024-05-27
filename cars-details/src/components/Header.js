@@ -24,10 +24,10 @@ const [showSearchBar,setShowSearchBar]=useState(false);
   ];
   return (
     <div>
-      <header className=" w-full flex flex-wrap justify-around relative
-       lg:grid grid-cols-2  lg:grid-cols-3 grid-rows-1    h-12 lg:justify-center md:justify-items-center  z-20 items-center ">
-        <div className="font-bold"><Link to={"/"}>Gaurav😎</Link></div>
-        <ul className="p-1 m-0 flex justify-center gap-5 font-medium">
+      <header className=" w-full flex flex-wrap justify-between h-auto lg:h-12 border-b-2 fixed bg-[#353232] px-3
+       lg:grid grid-cols-2  lg:grid-cols-3 grid-rows-1   lg:justify-center md:justify-items-center  z-20 items-center ">
+        <div className="font-bold "><Link to={"/"}>Gaurav😎</Link></div>
+        <ul className="p-1 m-0  justify-center gap-5 font-medium hidden md:flex">
           {lists.map(({ title ,page}, index) => (
             <li
               key={index}
@@ -44,7 +44,15 @@ const [showSearchBar,setShowSearchBar]=useState(false);
             </li>
           ))}
         </ul>
-        <div className="hover:cursor-pointer lg:hidden" onClick={()=>(setShowSearchBar(!showSearchBar))}>
+<div className="flex items-center ">
+     
+            <div className="w-full  lg:hidden">{
+              showSearchBar?<Search />:""
+            }</div>
+            <div className="w-full hidden lg:flex">
+                   <Search/>
+            </div>
+               <div className="hover:cursor-pointer lg:hidden" onClick={()=>(setShowSearchBar(!showSearchBar))}>
             {!showSearchBar?<svg
                 className="w-6"
                 aria-hidden="true"
@@ -60,18 +68,9 @@ const [showSearchBar,setShowSearchBar]=useState(false);
                   d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
                 />
               </svg>
-            :<div className="bg-white text-black px-2 rounded-2xl" >X</div>}  
+            :<div className="bg-white text-black px-2 rounded-2xl w-full" >X</div>}  
             </div>
-            {
-              showSearchBar?<Search />:""
-            }
-            <div className="w-full hidden lg:flex">
-                   <Search/>
             </div>
-  
-   
-         
-       
       </header>
       <Outlet/>
     </div>
