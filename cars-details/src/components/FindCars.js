@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function FindCars() {
+const FindCars=()=> {
   const [active, setActive] = useState("budget");
   const dataSet = [
     "budget",
@@ -76,7 +76,7 @@ const Budget = () => {
       <div className="flex flex-wrap gap-3 uppercase ">
         {budgetList.map(({ title, priceRage }, index) => (
           <Link
-            to={`/search?budget=${priceRage}`}
+            to={`/new/under=${priceRage}`}
             key={index}
             className="p-2 px-4 rounded-2xl bg-gray-100/[0.3] hover:bg-[#00afa0]"
           >
