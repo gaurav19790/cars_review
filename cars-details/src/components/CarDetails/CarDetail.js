@@ -24,7 +24,7 @@ const ReadMore = ({ children }) => {
 const CarDetail=()=> {
   return (
 
-    <div className='w-full sm:w-3/4 m-auto h-full pt-14  '>
+    <div className='w-full sm:w-3/4 m-auto h-full pt-1 '>
      
       <div className='p-3' > <h2 className='pb-2 font-bold'> Car full CarDetail</h2>
       <ReadMore>
@@ -53,7 +53,6 @@ const CarDetail=()=> {
         </div>
 
       </div>
-      <CarFullDetail/>
       <CarFullDetail/>
     </div>
   

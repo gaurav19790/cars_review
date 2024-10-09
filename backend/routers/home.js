@@ -1,8 +1,16 @@
 import express from "express";
-import { getCarDetail, getCarDetails, postCarDetails } from "../controllers/CarDetailController.js";
-const homeRouter=express.Router();
+import {
+  postCarDetail,
+  getCarDetails,
+  postCarDetails,
+} from "../controllers/CarDetailController.js";
+import { CarBrands } from "../controllers/CarBrands.js";
+import { CarBanner } from "../controllers/carBanner.js";
+const homeRouter = express.Router();
 
-homeRouter.get("/",getCarDetails)
-homeRouter.get("/car",getCarDetail)
-homeRouter.post("/",postCarDetails)
-export{homeRouter}
+homeRouter.get("/cars", getCarDetails);
+homeRouter.get("/brands", CarBrands);
+homeRouter.post("/car", postCarDetail);
+homeRouter.post("/", postCarDetails);
+homeRouter.get("/banner", CarBanner);
+export { homeRouter };

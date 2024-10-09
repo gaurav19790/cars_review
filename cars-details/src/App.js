@@ -1,24 +1,31 @@
 import "./App.css";
-import { Banner, Footer, Header, Brands, Cards, FindCars,  CarDetail } from "./components";
+import {
+  Banner,
+  Footer,
+  Header,
+  Brands,
+  Cards,
+  FindCars,
+  CarDetail,
+} from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Contact from "./components/pages/Contact";
 import Blogs from "./components/pages/Blogs";
 import AboutUs from "./components/pages/AboutUs";
 import React, { Suspense } from "react";
-const SearchPage =React.lazy(() => import('./components/SearchPage'));
-const Search =()=>{
-  return <Suspense  fallback={<div>loading..</div>}> <SearchPage/></Suspense>}
+const SearchPage = React.lazy(() => import("./components/SearchPage"));
+const Search = () => {
+  return (
+    <Suspense fallback={<div>loading..</div>}>
+      {" "}
+      <SearchPage />
+    </Suspense>
+  );
+};
 
 const Home = () => {
   const data = [
-    {
-      title: "swift",
-      photo:
-        "https://imgd.aeplcdn.com/1280x720/n/cw/ec/54399/swift-exterior-right-front-three-quarter-64.jpeg?isig=0&q=100",
-      header: "Slider 01",
-      para: "love the car drive the fast",
-    },
     {
       title: "design",
       photo:
@@ -47,31 +54,26 @@ const Home = () => {
       header: "Slider 05",
       para: "love the car drive the fast",
     },
-    
   ];
   return (
-    <div className="App text-sm md:text-base pt-14">
+    <div className="App text-sm md:text-base ">
       {/* banner */}
       <Banner data={data} />
       <div className=" ml-3">
         <Brands />
         <FindCars />
-        <Cards data={data} />
-        <Cards data={data} />
+        <Cards title="Trendding" data={data} />
+        <Cards title="Sports" data={data} />
       </div>
       {/* <Footer /> */}
     </div>
   );
 };
 
-const NoPage =()=>{
-return (
-  <div className="m-auto">
-    NO Page found 404
-  </div>
-)
-}
-const App=()=> {
+const NoPage = () => {
+  return <div className="m-auto">NO Page found 404</div>;
+};
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -81,16 +83,16 @@ const App=()=> {
           <Route path="contact" element={<Contact />} />
           <Route path="About" element={<AboutUs />} />
           <Route path="new/:id" element={<CarDetail />} />
-          
-          <Route path="*" element={<NoPage />} /> 
-          
+
+          <Route path="*" element={<NoPage />} />
+
           <Route path="search" element={<Search />} />
           <Route path="brand/:car" element={<Search />} />
         </Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
-}
+};
 
 export default App;
